@@ -1,5 +1,37 @@
 .App {
   text-align: center;
+  -webkit-text-fill-color: rgb(30, 183, 235);
+  border: 3px solid blue;
+  width: 480px;
+  align-content: center;
+  margin: auto;
+}
+.country {
+  text-align: center;
+  border: 9px solid rgb(165, 243, 63);
+  width: 450px;
+  align-content: center;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-div {
+  border: 2px solid black;
+  margin: 4px;
+  width: auto;
+  -webkit-text-fill-color: #000000;
+}
+
+td {
+  width: 225px;
+  text-align: right;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+#score {
+  -webkit-text-fill-color: red;
 }
 
 .App-logo {

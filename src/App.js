@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import allCountryScores from "./scores";
 
 function App() {
+  let objs;
+  let allScores = allCountryScores.sort((a,b) => (a.name > b.name ? 1: -1));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>High Scores Per Country</h1>
+      {allScores.map((score) => {
+        objs = score.scores.sort((a, b) => (a.s < b.s ? 1 : -1));
+        return (
+          <div className="country">
+            <h2>HIGH SCORES: {score.name}</h2>
+            <div className="table-div">
+              <table rules="columns">
+                {/* <thead>
+                  <tr>
+                    <th></th>
+                  </tr>
+                </thead> */}
+
+                {objs.map((obj, key) => {
+                  return (
+                    <tbody>
+                      <tr>
+                        <td>{obj["n"].toUpperCase()}</td>
+                        <td id="score">{obj["s"]}</td>
+                      </tr>
+                    </tbody>
+                  );
+                })}
+              </table>
+            </div>
+          </div>
+        );
+        
+})}
+      ;
     </div>
   );
 }
